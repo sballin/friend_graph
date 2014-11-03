@@ -14,7 +14,7 @@ def graph_json(list):
     # Create node list
     output = "{\n  \"nodes\":[\n"
     for index, friend in enumerate(friend_list):
-        output += "    {\"name\":\"%s\",\"group\":1},\n" % friend.name
+        output += "    {\"name\":\"%s\"},\n" % friend.name
         friend.number = index
     output += "  ],\n  \"links\":[\n"
     links = []
@@ -27,7 +27,7 @@ def graph_json(list):
             b = find_friend_number(mutual, friend_list)
             pair = (a, b) if a < b else (b, a)
             if pair not in links:
-                output += "    {\"source\":%d,\"target\":%d,\"value\":1},\n" % pair
+                output += "    {\"source\":%d,\"target\":%d},\n" % pair
                 links.append(pair)
 
     # Finish up JSON formatting and write file
@@ -35,6 +35,7 @@ def graph_json(list):
     output = output.replace(",\n  ]", "\n  ]")
     with codecs.open('friends.json', 'w', encoding='utf-8') as f:
         f.write(output)
+
 
 execfile("make_list.py")
 graph_json(friend_list)

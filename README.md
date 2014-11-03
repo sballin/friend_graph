@@ -9,7 +9,7 @@ Build a graph of your social network by looking at all your friends' mutual frie
 
 ### Dependencies
 
-- [fbcmd](http://fbcmd.dtompkins.com/)
+- [fbcmd](http://fbcmd.dtompkins.com/) v1.1
 
 ### Running
 
@@ -19,5 +19,7 @@ Then upload `index.html` and `friends.json` to a folder on a server and access i
 
 ### Planned features
 
-- Speed up interface to work with large networks. With around 800 friends, I get a json file around 1.6 MB, and my graph is extremely slow to settle while seeming to use only one core to render.
-- Color nodes based on Facebook networks that friends are a part of (combine colors for people in several networks?).
+- Speed up interface to work with large networks. With around 800 friends, I get 1.3 MB json file, and my graph is extremely slow to settle while seeming to use only one core to render.
+    - Let it settle, then display?
+- Color nodes based on Facebook networks that friends are a part of
+    - Combine colors for people in several networks
