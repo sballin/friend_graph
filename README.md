@@ -11,7 +11,7 @@ Build a graph of your social network by looking at all your friends' mutual frie
 
 - [fbcmd](http://fbcmd.dtompkins.com/)
 
-### Runnning
+### Running
 
     ./json_builder.py
 
