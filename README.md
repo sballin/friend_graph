@@ -2,7 +2,7 @@ __Warning:__ This code is dumb and makes as many queries to Facebook's API as yo
 
 ## friend_graph
 
-Build a graph of your social network by looking at all your friends' mutual friends. D3's force-directed graph makes highly connected groups hug each other close, and you'll find that end configuration corresponds pretty much exactly to the way you group your friends in your mind.
+Build a graph of your social network by looking at all your friends' mutual friends. D3's force-directed graph makes highly connected groups hug each other close, and you'll find that the end configuration corresponds pretty much exactly to the way you group your friends in your mind.
 
 ![](connections.png)
 
