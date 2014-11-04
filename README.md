@@ -12,7 +12,7 @@ Build a graph of your social network by looking at all your friends' mutual frie
 
 ### Running
 
-    ./json_builder.py
+    ./build_json.py
 
 Then upload `index.html` and `friends.json` to a folder on a server and access it. Be considerate, don't leave your friends' info lying around!
 

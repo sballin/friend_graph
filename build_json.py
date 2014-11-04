@@ -37,5 +37,5 @@ def graph_json(list):
         f.write(output)
 
 
-execfile("make_list.py")
+execfile("scrape_fb.py")
 graph_json(friend_list)
