@@ -22,3 +22,9 @@ Then upload `index.html` and `friends.json` to a folder on a server and access i
 - SVG graphics without being mad slow
 - Color nodes based on Facebook networks that friends are a part of
     - Combine colors for people in several networks
+
+### Resources
+
+- [Is there a way to zoom into a D3 force layout graph?](http://stackoverflow.com/questions/7871425/is-there-a-way-to-zoom-into-a-d3-force-layout-graph)
+- [Force Layout](https://github.com/mbostock/d3/wiki/Force-Layout)
+- [Draggable Canvas Force Graph](http://bl.ocks.org/syntagmatic/7052702)

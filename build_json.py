@@ -10,25 +10,29 @@ def find_friend_number(name, friend_list):
     return [friend.number for friend in friend_list if friend.name == name][0]
 
 
-def graph_json(list):
+def graph_json(list, include_self):
     # Create node list
     output = "{\n  \"nodes\":[\n"
+    if include_self:
+        output += "    {\"name\":\"me\"},\n"
     for index, friend in enumerate(friend_list):
-        output += "    {\"name\":\"%s\"},\n" % friend.name
-        friend.number = index
+        friend.number = index + 1
+        output += "    {\"name\":\"%s\"},\n" % friend.number    # anonymize
     output += "  ],\n  \"links\":[\n"
-    links = []
+    links = set()
 
     # Create list of links, checking if unique before adding
     for index, friend in enumerate(friend_list):
         print str(index) + "\t" + friend.name
+        if include_self:
+            output += "    {\"source\":%d,\"target\":%d},\n"
         for mutual in friend.friends:
             a = friend.number
             b = find_friend_number(mutual, friend_list)
             pair = (a, b) if a < b else (b, a)
             if pair not in links:
                 output += "    {\"source\":%d,\"target\":%d},\n" % pair
-                links.append(pair)
+                links.add(pair)
 
     # Finish up JSON formatting and write file
     output += "  ]\n}"
@@ -38,4 +42,4 @@ def graph_json(list):
 
 
 execfile("scrape_fb.py")
-graph_json(friend_list)
+graph_json(friend_list, include_self=False)

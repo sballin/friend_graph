@@ -18,11 +18,18 @@ var force = d3.layout.force()
 d3.json("friends.json", function(graph) {
   var context = canvas.node().getContext("2d");
 
+var n = graph.nodes.length;
+graph.nodes.forEach(function(d, i) {
+  d.x = d.y = width / n * i;
+});
+
   force
       .nodes(graph.nodes)
       .links(graph.links)
       .on("tick", tick)
       .start();
+for (var i = 0; i < n; ++i) force.tick();
+force.stop();
 
   function tick() {
     context.clearRect(0, 0, width, height);

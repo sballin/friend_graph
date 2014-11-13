@@ -34,6 +34,13 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 d3.json("friends.json", function(error, graph) {
+  var n = graph.nodes.length;
+  graph.nodes.forEach(function(d, i) {
+    d.x = 10*i % width;
+    d.y = 10*i % height;
+    i++;
+});
+
   force
       .nodes(graph.nodes)
       .links(graph.links)
